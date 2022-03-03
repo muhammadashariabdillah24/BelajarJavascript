@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Event</title>
+</head>
+<body>
+    <div class="formBio">
+
+    </div>
+
+    <script>
+        const submitForm = document.querySelector(".formBio")
+        const formELement = document.createElement('div')
+
+        const divIdFormELement = formELement.setAttribute("class", "form-element")
+
+        const labelName = document.createElement('label')
+        const labelNameForName = labelName.setAttribute("for", "nama")
+
+        const inputName = document.createElement('input')
+        Object.assign(inputName, {
+            type: 'text',
+            id: 'nama',
+            name: 'nama',
+            placeholder: 'Nama Anda'
+        })
+
+        formELement.appendChild(labelName)
+        formELement.appendChild(inputName)
+
+        console.log(formELement);
+    </script>
+</body>
+</html>

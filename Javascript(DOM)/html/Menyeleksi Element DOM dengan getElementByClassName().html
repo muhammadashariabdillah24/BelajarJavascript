@@ -1,0 +1,48 @@
+<!-- Method getElementByClassNam Digunakan untuk memilih element berdasarkan classnya method ini hanya berlaku pada satu class saja -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menyeleksi Element DOM dengan getElementByClassName</title>
+</head>
+<body>
+    
+    <input type="text" class="miegoreng" placeholder="Masukan Nama Mie Goreng"> <br />
+    <input type="text" class="mierebus" placeholder="Masukan Nama Mie Rebus"> <br />
+    <input type="text" class="miekwetiau" placeholder="Masukan Nama Mie Kwetiau"> <br />
+
+    <button type="submit" onclick="submitin()">Submit</button>
+
+    <script type="text/javascript">
+    
+        function submitin() {
+            
+            console.log(document.getElementsByClassName('miegoreng'));
+            console.log(document.getElementsByClassName('mierebus'));
+            console.log(document.getElementsByClassName('miekwetiau'));
+
+        }
+
+    </script>
+
+
+
+</body>
+</html>
+
+
+    <!-- <input type="text" class="middle"> <br />
+    <input type="text" class="middle"> <br />
+
+    <button type="button" name="button" onclick="jalanScript()">Jalankan</button>
+
+    <script type="text/javascript">
+    
+        function jalanScript() {
+            console.log(document.getElementsByClassName('middle'));
+        }
+
+    </script> -->

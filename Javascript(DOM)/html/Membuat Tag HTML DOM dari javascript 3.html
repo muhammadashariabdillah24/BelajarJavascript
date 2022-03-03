@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Memasak Air</title>
+</head>
+
+<body>
+    <p id="name">Langkah-langkah memasak air</p>
+    <ol id="daftar">
+        <li id="awal">Masukkan air ke dalam wadah.</li>
+        <li id="akhir">Matikan kompor.</li>
+    </ol>
+    <hr size="2" width="95%" color="black">
+
+    <script>
+
+        // MENAMBAHKAN SEBUAH ELEMENT BARU DIDALAM ELEMENT
+
+        // Method yang akan kita gunakan beserta fungsinya
+
+        // appendChild() = Fungsinya adalah menambahkan sebuah elemen HTML pada bagian paling akhir dari sebuah elemen
+        // createElement() = Fungsinya adalah membuat sebuah elemen HTML baru
+        // setAttribute() = Fungsinya adalah membuat sebuah attribute didalam sebuah element
+        // getElementById() = Fungsinya adalah mengambil sebuah id pada element HTML
+        // insertBefore() = Fungsinya adalah memberikan kemampuan untuk memasukkan elemen sebelum elemen HTML tertentu selama elemen parent-nya masih bisa diakses
+
+
+
+        // 1. kita buat dulu sebuah element <li></li> dengan method createElement()
+        const createElementFirst = document.createElement("li");
+
+        console.log(createElementFirst);
+        // <li></li>
+
+        // 2. setelah kita membuat elementnya tidak lupa juga membuat attribute id dengan nama selamatMenikmati
+        // dengan method setAttribute()
+        const addAttributeId = createElementFirst.setAttribute("id", "selamatMenikmati");
+
+        console.log(addAttributeId);
+        // <li id="selamatMenikmati"></li>
+
+        // 3. setelah element <li></li> terbuat sekarang kita masukan sebuah text atau valuenya
+        // kedalam element <li></li> yang sudah kita buat
+
+        const addedTextInCreateElementLi = createElementFirst.innerText = "Selamat Menikmati";
+
+        console.log(addedTextInCreateElementLi);
+        // Selamat Menikmati
+
+        // 4. Setelah kita membuat sebuah element childnya yaitu <li></li>
+        // kita perlu ambil juga element parentnya karena element ini yang akan kita masukan element <li></li> kedalamnya
+        // Ambil id element parentnya yaitu <ol></ol> dengan id daftar menggunakan method getElementById()
+
+        const getIdDafftar = document.getElementById("daftar");
+
+        console.log(getIdDafftar);
+        // <ol></ol>
+
+        // 5. Kita akan memasukan element childnya (<li></li>) kedalam parrent (<ol></ol>)
+        // kita masukan element child kedalam parrentnya menggunakan method appendChild()
+
+        const showElementChildInTheParrent = getIdDafftar.appendChild(createElementFirst);
+
+        console.log(showElementChildInTheParrent);
+        // <ol id="daftar">
+        //     <li id="awal">Masukkan air ke dalam wadah.</li>
+        //     <li id="akhir">Matikan kompor.</li>
+        //     <li>Selamat Menikmati</li>
+        // </ol>
+
+
+        // 6. Kita akan membuat element baru lagi yaitu element <li></li> dengan method createElement()
+        // yang nantinya kita akan menambahkan element <li></li> paling atas didalam element <ol></ol>
+        const createElementSecond = document.createElement("li");
+
+        console.log(createElementSecond);
+        // <li></li>
+
+        // 7. Setelah membuat element <li></li> tidak lupa juga kita akan menambahkan sebuah attribute id didalamnya
+        // menggunakan method setAttribute()
+        const addAttributeIdComporOn = createElementSecond.setAttribute("id", "hidupkanKompor");
+
+        console.log(addAttributeIdComporOn);
+        // <li id="hidupkanKompor"></li>
+
+        // 8. Setelah element <li></li> terbuat sekarang kita masukan sebuah text atau valuenya
+        // kedalam element <li></li> yang sudah kita buat
+        const addedTextInElementSecond = createElementSecond.innerText = "Hidupkan Kompor"
+
+        console.log(addedTextInElementSecond);
+        // Hidupkan Kompor
+
+        // 9. Kita akan mengambil id dari element child yaitu <li id="awal"></li> yang nantinya kita akan menambahkan element baru diatas element ini
+        // ambil idnya dengan menggunakan method getElementById()
+        const itemFirstInElementParrent = document.getElementById("awal")
+
+        console.log(itemFirstInElementParrent);
+        // <li id="awal"></li>
+
+        // 10. Disini kita akan menambahkan element baru kita didalam element parrentnya yaitu <ol id="daftar"></ol>
+        // diatas element <li id="awal"></li>
+        const addedElementNewToElementParrent = getIdDafftar.insertBefore(createElementSecond, itemFirstInElementParrent)
+
+        console.log(addedElementNewToElementParrent);
+        // <ol id="daftar">
+        //     <li id="hidupkanKompor">Hidupkan Kompor</li>
+        //     <li id="awal">Masukkan air ke dalam wadah.</li>
+        //     <li id="akhir">Matikan kompor.</li>
+        //     <li>Selamat Menikmati</li>
+        // </ol>
+
+
+    </script>
+</body>
+
+</html>

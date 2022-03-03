@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Event World</title>
+    <style>
+        .contents {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border: 1px solid black;
+            border-width: 2px;
+            padding: 15px;
+        }
+
+        #generateButton {
+            margin-top: 5px;
+            margin-bottom: 15px;
+            ;
+        }
+    </style>
+</head>
+
+<body onload="welcome()">
+    <div class="contents" align="center" hidden>
+        <button onclick="increment()" id="incrementButton">Tekan Aku :)</button>
+        <h3>Kamu sudah menekan tombol di atas sebanyak <span id="count">0</span></h3>
+        <p></p>
+    </div>
+
+    <script>
+
+
+
+        function increment() {
+            document.getElementById("count").innerText++
+
+            if (document.getElementById("count").innerText == 7) {
+                const hiddenMessage = document.createElement("h4");
+                hiddenMessage.innerText = "Selamat! Anda menemukan hadiah tersembunyi..."
+                hiddenMessage.style.fontSize = "1em"
+                hiddenMessage.style.color = "#FF0000"
+
+                const image = document.createElement("img");
+                image.setAttribute("src", "https://i.ibb.co/0V49VRZ/catto.jpg");
+
+                const contents = document.querySelector(".contents")
+                contents.appendChild(hiddenMessage).appendChild(image);
+            }
+        }
+
+        // == Exploreku sendiri == //
+
+        // bisa juga seperti ini
+
+        // function increment() {
+        //    const increment = document.getElementById("count").innerText++
+        //    return increment
+        // }
+
+        // document.getElementById("incrementButton").onclick = increment;
+
+        // === //
+
+        function welcome() {
+            alert("Element HTML akan muncul")
+            const contents = document.querySelector('.contents')
+            contents.removeAttribute("hidden")
+        }
+
+        // document.getElementById("incrementButton").onclick = increment;
+        // document.body.onload = welcome
+
+    </script>
+</body>
+
+</html>

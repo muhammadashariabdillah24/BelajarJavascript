@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Attribute Item</title>
+</head>
+<body>
+    
+    <p id="ganti">Akan Diganti</p>
+
+    <button type="button" onclick="tombolGanti()" name="button">Tombol Ganti</button>
+
+    <script type="text/javascript">
+
+        function tombolGanti() {
+            
+            let initial = document.getElementsByTagName("button")[0]
+            let varForChange = initial.attributes.item(2).name
+            document.getElementById("ganti").innerHTML = varForChange
+
+        }
+
+    </script>
+
+</body>
+</html>
+    <!-- Element Button Yang Nanti Kita Ambil Attributnya
+    <button type="button" onclick="Tombol()" name="button">Klik</button>
+
+    <p id="contoh">contoh</p>
+
+    <script type="text/javascript">
+    
+        function Tombol() {
+            
+            let a = document.getElementsByTagName("button")[0]; // Ambil attribute pada tag button dimulai dari array ke 0 yaitu attribute ( type )
+            let b = a.attributes.item(2).name; // Ambil attribute 0 yang ada pada tag button
+            document.getElementById("contoh").innerHTML = b;
+
+        }
+
+    </script> -->
+
+
+
+    <!-- 1 -->
+    <!-- <p id="namadepan">Ganti Jadi Nama Depanmu</p>
+    <p id="namatengah">Ganti Jadi Nama Tengah</p>
+    <p id="namabelakang">Ganti Jadi Nama Belakang</p>
+
+    <button type="button" onclick="gantiNamaDepan()">Ganti Nama Depan</button>
+    <button type="button" onclick="gantiNamaTengah()">Ganti Nama Tengah</button>
+    <button type="button" onclick="gantiNamaBelakang()">Ganti Nama Belakang</button>
+
+    <script type="text/javascript">
+    
+        function gantiNamaDepan() {
+            
+            document.getElementById('namadepan').innerHTML = 'Muhammad'
+
+        }
+
+        function gantiNamaTengah() {
+            
+            document.getElementById('namatengah').innerHTML = 'Ashari'
+
+        }
+
+        function gantiNamaBelakang() {
+            
+            document.getElementById('namabelakang').innerHTML = 'Abdillah'
+
+        }
+        
+    </script> -->

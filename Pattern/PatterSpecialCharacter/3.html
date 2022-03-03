@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head></head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tugas Logika 2</title>
+</head>
+<body>
+    <script>
+        for(let a = 1;a < 10;a++){
+            for (let b = 1; b < 10; b++){
+                if(a == b){
+                    document.write(' * ')
+                } else {
+                    document.write(' - ')
+                }
+                if(a + b == 10){
+                    document.write(' * ')
+                } else {
+                    document.write(' - ')
+                }
+                if(a && b == 5){
+                    document.write(' * ')
+                } else {
+                    document.write(' - ')
+                }
+                if(b && a == 5){
+                    document.write(' * ')
+                } else {
+                    document.write(' - ')
+                }
+            }
+
+            document.write('<br>')
+        }
+    </script>
+</body>
+</html>

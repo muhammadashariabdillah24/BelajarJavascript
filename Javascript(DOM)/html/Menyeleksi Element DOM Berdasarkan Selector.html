@@ -1,0 +1,60 @@
+<!-- Method ini digunakan untuk memilih element pada DOM berdasarkan nama selector nya. Seperti yang sudah kita pelajari di materi CSS sebelumnya, -->
+<!-- Dan method querySelector digunakan untuk mengambil semua class -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <input type="text" class="aku" placeholder="Masukan Nama Kamu"> <br />
+    <input type="text" class="barang" placeholder="Masukan Nama Barang Yang Kamu Pinjam"> <br />
+    <input type="text" class="dia" placeholder="Masukan Nama Dia"> <br /><br />
+
+    <button type="button" name="button" onclick="pinjamBarang()">Pinjam</button>
+
+    <script type="text/javascript">
+
+        function pinjamBarang() {
+            
+            console.log(document.querySelector('.aku'));
+            console.log(document.querySelector('.barang'));
+            console.log(document.querySelector('.dia'));
+
+        }
+
+    </script>
+
+
+    
+</body>
+
+</html>
+<!-- <input type="text" class="middle" name="" value="Muhammad"> <br />
+
+<input type="text" class="middle" name="" value="Ashari"><br /><br />
+
+<button type="button" name="button" onclick="jalanScriptQuerySelector()">Jalankan Query Selector</button>
+
+<button type="button" name="button" onclick="jalanScriptQuerySelectorAll()">Jalankan Query Selector All</button>
+
+<script type="text/javascript">
+
+    function jalanScriptQuerySelector() {
+
+        console.log(document.querySelector(".middle"));
+
+    }
+
+    function jalanScriptQuerySelectorAll() {
+
+        console.log(document.querySelectorAll(".middle"));
+
+    }
+
+</script> -->

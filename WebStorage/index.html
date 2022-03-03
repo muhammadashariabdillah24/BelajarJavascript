@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style/style.css">
+    <title>Web Storage</title>
+</head>
+<body>
+    <div class="contents" align="center">
+        <button id="incrementButton">Tambah Nilai</button>
+        <button id="clear">Hapus Storage</button>
+        <h3>Kamu sudah menekan tombol di atas sebanyak: </h3>
+        <h2 id="count">0</h2>
+    </div>
+
+    <script>
+
+        // LOCAL STORAGE
+
+        // const localStorageKey = 'PRESS_FREQUENCY';
+
+        // // pengecekan apakah data localStorage dengan key count tersedia atau belum
+        // if (typeof(Storage) !== 'undefined') {
+        //     if (localStorage.getItem(localStorageKey) === null) {
+        //         // Jika item pada local storage belum ada 
+        //         // maka akan diberi nilai awal yakni 0
+        //         localStorage.setItem(localStorageKey, 0);
+        //     }
+
+        //     const incrementButton = document.querySelector('#incrementButton');
+        //     const clearButton = document.querySelector('#clear');
+        //     const countDisplay = document.querySelector('#count');
+
+        //     // memberikan nilai item dari local storage
+        //     countDisplay.innerText = localStorage.getItem(localStorageKey);
+
+        //     // mengupdate nilai dari item local storage jika tombol ditekan
+        //     incrementButton.addEventListener('click', () => {
+        //         let count = localStorage.getItem(localStorageKey);
+        //         count++;
+        //         localStorage.setItem(localStorageKey, count);
+        //         countDisplay.innerText = localStorage.getItem(localStorageKey);
+        //     })
+
+        //     // memberikan nilai 0 ke tampilan karena di-reset dan menghapus item
+        //     clearButton.addEventListener('click', () => {
+        //         localStorage.removeItem(localStorageKey);
+        //         countDisplay.innerText = 0
+        //     })
+        // } else {
+        //     alert("Browser yang anda gunakan tidak mendukung Web Storage");
+        // }
+
+        // SESSION STORAGE
+        const sessionStorageKey = 'PRESS_FREQUENCY';
+
+        // pengecekan apakah data localStorage dengan key count tersedia atau belum
+        if (typeof(Storage) !== 'undefined') {
+            if (sessionStorage.getItem(sessionStorageKey) === null) {
+                // Jika item pada local storage belum ada 
+                // maka akan diberi nilai awal yakni 0
+                sessionStorage.setItem(sessionStorageKey, 0);
+            }
+
+            const incrementButton = document.querySelector('#incrementButton');
+            const clearButton = document.querySelector('#clear');
+            const countDisplay = document.querySelector('#count');
+
+            // memberikan nilai item dari local storage
+            countDisplay.innerText = sessionStorage.getItem(sessionStorageKey);
+
+            // mengupdate nilai dari item local storage jika tombol ditekan
+            incrementButton.addEventListener('click', () => {
+                let count = sessionStorage.getItem(sessionStorageKey);
+                count++;
+                sessionStorage.setItem(sessionStorageKey, count);
+                countDisplay.innerText = sessionStorage.getItem(sessionStorageKey);
+            })
+
+            // memberikan nilai 0 ke tampilan karena di-reset dan menghapus item
+            clearButton.addEventListener('click', () => {
+                sessionStorage.removeItem(sessionStorageKey);
+                countDisplay.innerText = 0
+            })
+        } else {
+            alert("Browser yang anda gunakan tidak mendukung Web Storage");
+        }
+
+    </script>
+</body>
+</html>

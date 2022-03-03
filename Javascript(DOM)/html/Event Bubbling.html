@@ -1,0 +1,63 @@
+<!-- 
+    Apakah Anda pernah melihat gelembung udara muncul 
+    dari dasar minuman bersoda ketika dituang ke sebuah gelas? 
+    Pasti gelembung udara tersebut 
+    akan bergerak perlahan menuju ke permukaan, bukan? 
+    Ingat baik-baik analogi ini bahwa gelembung udara akan selalu naik ya.
+
+
+    Event bubbling adalah ketika sebuah event
+    terjadi pada sebuah elemen, maka event handler milik 
+    elemen tersebut akan dijalankan terlebih dahulu 
+    yang diikuti event handler elemen parent-nya
+ -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Belajar Bubbling</title>
+</head>
+<style>
+    body * {
+        margin: 8px;
+        padding: 5px;
+        border: 1px solid black;
+        border-width: 2px;
+        width: 60%;
+    }
+</style>
+
+<body>
+    <!-- Id Ditulis dengan huruf kecil -->
+    <div onclick="alert('ELEMEN LANGIT')" align="center">LANGIT
+        <div onclick="alert('ELEMEN LUAR')" align="center">LUAR
+            <div onclick="alert('ELEMEN TENGAH')">TENGAH
+                <div onclick="alert('ELEMEN DALAM')" align="center">DALAM
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // STEP BY STEP BAGAIMANA CODE BERJALAN
+        
+        // 1. Deklarasikan sebuah variable untuk mewakili pengambilan tag div yang menggunakan method getElementsByTagName
+        const divs = document.getElementsByTagName('div')
+        // 2. Kita akan melakukan aksi jika salah satu element diklik
+        // dengan menjalanka event sesuai element yang diklik
+        for (let el of divs) {
+            el.addEventListener("click", function () {
+                // 3. Code akan akan mengambil attribute id yang berada pada sebuah element div
+                // dan merubahnya menjadi huruf menjadi yang tadinya huruf kecil
+                alert(`ELEMEN ${el.getAttribute("id").toUpperCase()}`);
+            })
+        }
+    </script>
+    
+</body>
+
+</html>

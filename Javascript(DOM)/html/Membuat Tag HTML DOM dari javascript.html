@@ -1,0 +1,96 @@
+<!-- VERSION 1 -->
+
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Welcome to Cube World!</title>
+    <style>
+        button {
+            width: 200px;
+            font-size: 15px;
+            margin: 8px;
+            padding: 3px;
+        }
+    </style>
+</head>
+
+<body>
+    <div align="center">
+        <h2>Its Cube Time!</h2>
+        <img id="gambar"
+            src="https://dicoding-web-img.sgp1.cdn.digitaloceanspaces.com/original/commons/homepage-dicoding-challenge-illustration.png"
+            alt="Its a rubiks cube!" width="150" height="100">
+        <p id="caption"><b>Sudah siap untuk memecahkan teka-teki permainan tersebut?</b></p>
+        <div class="button-group"></div>
+        <div class="button"><button>Sejarah</button></div>
+        <div class="button"><button>Permainan</button></div>
+        <div class="button"><button><i>Fun Fact</i></button></div>
+        <div class="button"><button>Play (Coming Soon)</button></div>
+        <div class="button"><button>Exit</button></div>
+    </div>
+    </div>
+
+    <script>
+
+        // MERUBAH UKURAN GAMBAR
+
+        // Ambil element img melalui idnya yaitu gambar dengan method getElementById()
+        const gambar = document.getElementById('gambar')
+
+        // ubah attribute width menjadi 300 dengan menggunkan method setAttribute()
+        gambar.setAttribute('width', "300")
+
+        // ubah attribute height menjadi 300 dengan menggunkan method setAttribute()
+        gambar.setAttribute('height', "300")
+
+
+        // Coba dilihat lagi code diatas
+        // nilai parameter kedua dari method setAttribute()
+        // bernilai string
+        // kita juga bisa mengganti nilai tersebut menjadi sebuah number
+        // contohnya seperti ini
+
+        // gambar.setAttribute('width', 300)
+
+        
+        // gambar.setAttribute('height', 300)
+
+        // jika dijalankan maka hasilnya sama saja dan tidak akan terjadi error
+        // Kenapa ??
+        // karena Javascript sendiri mempunyai fitur Automatic Type Conversion
+        // yang akan mengkonversi sebuah nilai jika dibutuhkan
+
+
+
+
+        // MERUBAH TOMBOL
+
+        // Ambil element button melalui classnya
+        const buttons = document.querySelectorAll('.button')
+
+        // variable buttons mengandung isi dari document.querySelectorAll('.button')
+        // yang dimana jika dilihat hasilnya akan menjadi sebuah array
+
+        // Sekarang Mengambil array ketiga yaitu button Play (Coming Soon)
+        const playButton = buttons[3]
+
+
+        // Disini kita ingin mengambil tag Button yang berada pada tag Div
+        const getTagButtonInTagDiv = playButton.childNodes[0]
+
+
+        // Kita juga akan menambahkan sebuah attribute dalam sebuah tag Button
+        // yaitu disable dengan menggunakan setAttribute()
+        // setelah attribute disable sudah ditambahkan
+        // maka tombol tidak akan bisa ditekan lagi
+
+        getTagButtonInTagDiv.setAttribute("disabled", "disabled");
+
+
+
+    </script>
+</body>
+
+</html>

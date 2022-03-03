@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Event World</title>
+        <style>
+            .contents{
+                position: fixed;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                border: 1px solid black;
+                border-width:2px;
+                padding : 15px;
+            }
+ 
+            #generateButton{
+                margin-top : 5px;
+                margin-bottom: 15px;;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="contents" align="center" hidden>
+            <button id="incrementButton">Tekan Aku :)</button>
+            <h3>Kamu sudah menekan tombol di atas sebanyak <span id="count">0</span></h3>
+        </div>
+       
+        <script>
+            function increment(){
+                // Code ini akan mengambil id count dan menambahkan 1 setiap code dijalankan
+                // karena terdapat operator incremet ++ pada innerText
+                document.getElementById("count").innerText++;
+               
+                // Ini adalah sebuah logika yang dimana jika nilai dari id count sudah
+                // berada diangka 7 maka akan melakukan kondisi
+                // yaitu :
+
+                if (document.getElementById("count").innerText == 7){
+                    // Pertama membuat sebuah element baru yaitu <h4></h4>
+                    const hiddenMessage = document.createElement("h4");
+                    // Setelah element dibuat maka akan berisi text 
+                    hiddenMessage.innerText = "Selamat! Anda menemukan hadiah tersembunyi..."
+                    // Kedua kita juga membuat sebuah element img juga
+                    const image = document.createElement("img");
+                    // dan disini kita menyetting atau menambahkan sebuah attribute kedalam element tersebut
+                    image.setAttribute("src", "https://i.ibb.co/0V49VRZ/catto.jpg");
+                    // Ketiga kita juga mengambil class contents dengan method querySelector
+                    const contents = document.querySelector(".contents");
+                    // setelah class dipanggil maka akan ada dua element yang dimasukan kedalam class content yaitu
+                    // 1. element <h4></h4> dengan method appendChild(hiddenMessage)
+                    // 2. element <img /> dengan method appendChild(image)
+                    contents.appendChild(hiddenMessage).appendChild(image);
+                }
+            }
+ 
+            function welcome(){
+                // Code ini akan jalan ketika web pertama kali dibuat
+                // tapi jika attribute hidden pada element dihilangkan
+                alert("Sim salabim muncullah elemen-elemen HTML!")
+                // mengambil class contents
+                const contents = document.querySelector(".contents");
+                // menghapus sebuah attruute hidden
+                contents.removeAttribute("hidden");
+            }
+ 
+            // Code ini akan dijalankan ketika web dibuka
+            window.addEventListener('load', welcome);
+            // Code ini untuk melakukan increment
+            document.getElementById('incrementButton').addEventListener('click', increment)
+        </script>
+    </body>
+</html>

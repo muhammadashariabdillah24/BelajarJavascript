@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tugas Mandiri 1</title>
+</head>
+<body>
+
+    <h1>Programming Itu Mudah</h1>
+
+    <p class="asharidev">Ashari Dev</p>
+
+    <p class="sama">Sama</p>
+
+    <p class="sama">Sama</p>
+
+    <p id="ganti">Akan Diganti Dengan Atribut Yang Ada Dalam Button</p>
+    
+    <input type="text" class="aldi" placeholder="Masukan Class Dengan Nama Aldi"><br />
+
+    <input type="text" id="indra" placeholder="Masukan Id Dengan Nama Indra"><br />
+
+    <button type="button" name="button" onclick="jalankan()">Jalankan</button>
+
+    <script type="text/javascript">
+
+        function jalankan() {
+            
+            console.log('Menyeleksi DOM Berdasarkan Tag Element');
+            console.log(document.getElementsByTagName('h1'));
+
+            console.log('\n');
+
+            console.log('Menyeleksi DOM Berdasarkan QuerySelector');
+            console.log(document.getElementsByTagName('.asharidev'));
+
+            console.log('\n');
+
+            console.log('Menyeleksi DOM Berdasarkan QuerySelectorAll');
+            console.log(document.querySelectorAll('.sama'));
+
+            console.log('\n');
+
+            console.log('Menyeleksi DOM Berdasarkan Class Aldi');
+            console.log(document.getElementsByClassName('aldi'));
+
+            console.log('\n');
+
+            console.log('Menyeleksi DOM Berdasarkan Id Indra');
+            console.log(document.getElementById('indra'));
+
+            console.log('\n');
+
+            let inisialisasi = document.getElementsByTagName('button')[0]
+            let variablePengganti = inisialisasi.attributes.item(1).name
+            document.getElementById('ganti').innerHTML = variablePengganti
+
+
+
+        }
+
+    </script>
+
+</body>
+</html>

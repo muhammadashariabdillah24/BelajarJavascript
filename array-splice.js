@@ -36,7 +36,7 @@ console.log('\n=====================================\n');
 function panggilSplice2() {
     
     let kota = ['Jakarta','Padang','Balikpapan','Sumbar','Sumsel','Sumut']
-    kota.splice(0, 2)
+    kota.splice(2, 1)
     return kota
 }
 

@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Belajar Membuat Event Handler Sendiri</title>
+</head>
+<body>
+    
+    <div class="biodata" align="center">
+
+        <h1 id="title">Biodata Pribadi</h1>
+
+        <h1 id="namalengkap">Kosong</h1>
+
+        <h1 id="umur">Kosong</h1>
+
+        <h1 id="tempatlahir">Kosong</h1>
+
+    </div>
+
+    <div class="allbutton" align="center">
+
+        <button id="tombolNama">Nama</button>
+        <button id="tombolUmur">Umur</button>
+        <button id="tombolTempatLahir">Tempat Lahir</button>
+
+    </div>
+
+    <script>
+
+        const changeNamaLengkap = new Event("changeNamaLengkap");
+        const changeUmur = new Event("changeUmur");
+        const changeTempatLahir = new Event("changeTempatLahir");
+
+        function _load() {
+            const varTombolNama = document.getElementById('tombolNama');
+            const varTombolUmur = document.getElementById('tombolUmur');
+            const varTombolTempatLahir = document.getElementById('tombolTempatLahir');
+
+            varTombolNama.addEventListener('changeNamaLengkap', customEventNamaLengkap);
+            varTombolUmur.addEventListener('changeUmur', customEventUmur);
+            varTombolTempatLahir.addEventListener('changeTempatLahir', customEventTempatLahir);
+
+            function NL() {
+                varTombolNama.dispatchEvent(changeNamaLengkap)
+            }
+
+            function U() {
+                varTombolUmur.dispatchEvent(changeUmur)
+            }
+
+            function TL() {
+                varTombolTempatLahir.dispatchEvent(changeTempatLahir)
+            }
+
+            varTombolNama.addEventListener('click', NL)
+            
+            varTombolUmur.addEventListener('click', U)
+            
+            varTombolTempatLahir.addEventListener('click', TL)
+        }
+
+
+        window.addEventListener('load', _load)
+        
+
+        function customEventNamaLengkap(params) {
+            console.log(`Event untuk ${params.type} telah jalan`);
+            const varNamaLengkap = document.getElementById('namalengkap');
+            varNamaLengkap.innerText = "Muhammad Ashari Abdillah";
+        }
+
+        function customEventUmur(params) {
+            console.log(`Event untuk ${params.type} telah jalan`);
+            const varUmur = document.getElementById('umur');
+            varUmur.innerText = "20 Tahun"
+        }
+
+        function customEventTempatLahir(params) {
+            console.log(`Event untuk ${params.type} telah jalan`);
+            const varTempatLahir = document.getElementById('tempatlahir');
+            varTempatLahir.innerText = "Jakarta, 24 April 2001"
+        }
+
+    </script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Belajar Membuat Event Sendiri</title>
+    <style>
+        .buttons{
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border: 1px solid black;
+            border-width: 2px;
+            padding: 15px;
+        }
+        .button{
+            margin: 8px;
+            height: 40px;
+        }
+    </style>
+</head>
+<body>
+    <div class="buttons" align="center">
+        <h1 id="caption">Silahkan tekan salah satu tombol di bawah...</h1>
+        <button class="button" id="tombol">Tombol Custom Event</button>
+    </div>
+
+
+    <script>
+
+        const changeCaption = new Event("changeCaption");
+
+        window.addEventListener('load', function(){
+            const tombol = document.getElementById('tombol');
+            tombol.addEventListener('changeCaption', customEventHandler);
+            tombol.addEventListener('click', function(){
+                tombol.dispatchEvent(changeCaption)
+            })
+        })
+
+        function customEventHandler(ev) {
+            console.log(`Event ${ev.type} telah dijalankan`);
+            const caption = document.getElementById('caption');
+            caption.innerText =  "Anda telah membangkitkaan custom event"
+        }
+
+    </script>
+</body>
+</html> -->
