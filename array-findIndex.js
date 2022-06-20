@@ -8,7 +8,7 @@ let thisArray = [5,12,8,130,44]
 
 function panggilFindIndex(element) {
     
-    return element < 130
+    return element < 10
 }
 
 console.log(

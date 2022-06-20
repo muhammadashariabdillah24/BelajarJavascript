@@ -13,6 +13,7 @@ function panggilForEach() {
 
 panggilForEach()
 
+
 // Buaya,Kijang,Kelinci,Badak . 0 
 //  Buaya
 // Buaya,Kijang,Kelinci,Badak . 1 

@@ -22,7 +22,6 @@ function panggilConcat2() {
     let data1 = ['Surabaya','Malang'];
     let data2 = ['Jogja','Magelang'];
 
-    
 
     return data1.concat(data2);
 
